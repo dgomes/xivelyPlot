@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>XivelyPlot</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+			#plotArea {
+      			width : 600px;
+        		height: 384px;
+        		margin: 8px auto;
+      		}
+        </style>
+        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    </head>
+    <body>
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="#">XivelyPlot</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+			<div class="row-fluid">
+				<div class="span2">
+					<!--Sidebar content-->
+					<form id="settings">
+							<fieldset>
+								<legend>Xively</legend>
+								<label>APIKey</label>
+								<input name="apikey" type="text" placeholder="Type something…">
+								<label>Feed ID</label>
+								<input name="feedid" type="text" placeholder="Type something…">
+								<label>Datastream ID</label>
+								<input name="datastreamid" type="text" placeholder="Type something…">
+								<button type="submit" class="btn" id="save">Save</button>
+							</fieldset>
+					</form>
+
+				</div>
+    			<div class="span10">
+      				<!--Body content-->
+					<div id="plotArea"></div>
+    			</div>
+			</div>
+		</div>
+
+            <hr>
+
+            <footer>
+                <p>&copy; Diogo Gomes 2013</p>
+            </footer>
+
+        </div> <!-- /container -->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+
+		<script type="text/javascript" src="js/vendor/jquery.storageapi.min.js"></script>
+
+        <script src="js/vendor/bootstrap.min.js"></script>
+    	<script type="text/javascript" src="js/vendor/flotr2.min.js"></script>
+
+		<!-- Include XivelyJS -->
+  		<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
+
+        <script src="js/main.js"></script>
+    </body>
+</html>
