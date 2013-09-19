@@ -75,13 +75,13 @@ $(document).ready(function($) {
 		function showData(feedID, datastreamID, selector, label) {
 			xively.datastream.get (feedID, datastreamID, function ( datastream ) {
 				console.log(datastream);
-				$(selector).html( parseFloat(('' + (datastream["current_value"]+0.001)).match(/\d*\.\d{2}/)[0])+datastream["unit"]["symbol"]);
+				$(selector).html( (datastream["current_value"]+".0000").match(/\d*\.\d{2}/)[0]+datastream["unit"]["symbol"]);
 
 				$(label).html(datastream["id"]);
 
 				xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
 					// Display the current value from the updated datastream
-					$(selector).html( parseFloat(('' + (datastream["current_value"]+0.001)).match(/\d*\.\d{2}/)[0])+datastream["unit"]["symbol"]);
+					$(selector).html( (datastream["current_value"]+".0000").match(/\d*\.\d{2}/)[0]+datastream["unit"]["symbol"]);
 	    		});
 			});
 		}
@@ -162,6 +162,7 @@ $(document).ready(function($) {
 			});
 			plot($('select[name="feedid"]').val(), $('select[name="datastreamid"]').val(), plotSelector);
 			showData($('select[name="feedid"]').val(), $('select[name="datastreamid"]').val(), currentSelector, currentLabelSelector);
+			$('#conf').hide();
 			return false;
 		});
 
