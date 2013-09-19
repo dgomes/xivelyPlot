@@ -14,7 +14,7 @@
                 padding-bottom: 40px;
             }
 			#plotArea {
-      			width : 600px;
+      			width : 480px;
         		height: 384px;
         		margin: 8px auto;
       		}
@@ -31,7 +31,7 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse" id="confButton">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -43,18 +43,37 @@
 
         <div class="container-fluid">
 			<div class="row-fluid">
-				<div class="span2">
+    			<div class="span4 offset4">
+					<div class="hero-unit" style="text-align: center">
+						<h1 id="current">##.#º</h1>
+						<p id="current_label">unit</p>
+					</div>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="span2" id="conf">
 					<!--Sidebar content-->
+					<form id="login">
+							<fieldset>
+								<legend>Xively</legend>
+								<label>Username</label>
+								<input name="username" type="text" class="input-small" placeholder="Your Xively Username">
+								<label>Password</label>
+								<input name="password" type="password" class="input-small" placeholder="Password">
+								<button type="submit" class="btn" id="signin">Sign-in</button>
+							</fieldset>
+					</form>
 					<form id="settings">
 							<fieldset>
 								<legend>Xively</legend>
-								<label>APIKey</label>
-								<input name="apikey" type="text" placeholder="Type something…">
+								<input name="apikey" type="hidden" placeholder="">
 								<label>Feed ID</label>
-								<input name="feedid" type="text" placeholder="Type something…">
+								<div class="controls"> <select name="feedid" class="input-large">
+								</select></div>
 								<label>Datastream ID</label>
-								<input name="datastreamid" type="text" placeholder="Type something…">
-								<button type="submit" class="btn" id="save">Save</button>
+								<div class="controls"> <select name="datastreamid" class="input-large">
+								</select></div>
+								<button type="submit" class="btn" id="save">Plot</button>
 							</fieldset>
 					</form>
 
